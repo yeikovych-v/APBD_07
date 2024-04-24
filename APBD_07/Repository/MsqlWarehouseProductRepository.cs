@@ -5,19 +5,6 @@ namespace APBD_07.Repository;
 
 public class MsqlWarehouseProductRepository(IConfiguration configuration, IWarehouseRepository warehouseRepository, IProductRepository productRepository, IOrderRepository orderRepository) : IWarehouseProductRepository
 {
-    private List<WarehouseProduct> _wp = new();
-    private static readonly int Index = 0;
-
-    // public int InsertCompletedOrder(int warehouseId, int productId, int orderId, int amount, decimal orderPrice,
-    //     DateTime createdAt)
-    // {
-    //     var p = new Product(productId, "", "", 10);
-    //     _wp.Add(new WarehouseProduct(Index, new Warehouse(warehouseId, "", ""), p,
-    //         new Order(orderId, p, amount, DateTime.Now), amount, orderPrice, createdAt));
-    //     
-    //     return Index;
-    // }
-
     public bool InsertCompletedOrder(int warehouseId, int productId, int orderId, int amount, decimal orderPrice,
         DateTime createdAt)
     {
