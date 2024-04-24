@@ -7,11 +7,10 @@ using static Microsoft.AspNetCore.Http.Results;
 namespace APBD_07.Controller;
 
 [ApiController]
-[Route("api/warehouse")]
 public class WarehouseController(WarehouseFunctionsService funcService, ProcedureService prodService)
 {
     [HttpPost]
-    [Route("/transaction")]
+    [Route("api/warehouse/transaction")]
     public IResult GetProductFromWarehouseTransaction([FromBody] OrderJsonDto orderDto)
     {
         var productExists = funcService.ProductExists(orderDto.IdProduct);
@@ -47,7 +46,7 @@ public class WarehouseController(WarehouseFunctionsService funcService, Procedur
     }
 
     [HttpPost]
-    [Route("/procedure")]
+    [Route("api/warehouse/procedure")]
     public IResult GetProductFromWarehouseProcedure([FromBody] OrderJsonDto orderDto)
     {
         var productExists = funcService.ProductExists(orderDto.IdProduct);
